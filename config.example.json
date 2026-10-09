@@ -1,0 +1,20 @@
+{
+  "lists": {"inbound": {"name": "特定网段到本机的访问", "expected_guid": null}},
+  "netsh_path": "C:\\Windows\\System32\\netsh.exe",
+  "encoding": "auto",
+  "encoding_fallbacks": [],
+  "command_timeout": 30,
+  "lock_timeout": 30,
+  "export_dir": "C:\\ProgramData\\IpsecManager\\exports",
+  "backup_dir": "C:\\ProgramData\\IpsecManager\\backups",
+  "audit_dir": "C:\\ProgramData\\IpsecManager\\audit",
+  "lock_path": "C:\\ProgramData\\IpsecManager\\machine-write.lock",
+  "write_enabled": false,
+  "delete_semantics_verified": false,
+  "webhook": {
+    "secret_env": "IPSEC_WEBHOOK_SECRET",
+    "window_seconds": 300,
+    "max_body_bytes": 16384,
+    "principal": "authenticated-management-client"
+  }
+}

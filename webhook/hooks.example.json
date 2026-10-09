@@ -1,0 +1,377 @@
+[
+  {
+    "id": "ipsec-list",
+    "execute-command": "C:\\Program Files\\IpsecManager\\.venv\\Scripts\\python.exe",
+    "command-working-directory": "C:\\Program Files\\IpsecManager",
+    "http-methods": [
+      "POST"
+    ],
+    "incoming-payload-content-type": "application/json",
+    "include-command-output-in-response": true,
+    "include-command-output-in-response-on-error": true,
+    "response-headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json; charset=utf-8"
+      }
+    ],
+    "pass-arguments-to-command": [
+      {
+        "source": "string",
+        "name": "-I"
+      },
+      {
+        "source": "string",
+        "name": "-m"
+      },
+      {
+        "source": "string",
+        "name": "ipsec_manager"
+      },
+      {
+        "source": "string",
+        "name": "--config"
+      },
+      {
+        "source": "string",
+        "name": "C:\\ProgramData\\IpsecManager\\config.json"
+      },
+      {
+        "source": "string",
+        "name": "webhook"
+      },
+      {
+        "source": "string",
+        "name": "--operation"
+      },
+      {
+        "source": "string",
+        "name": "list"
+      }
+    ],
+    "pass-file-to-command": [
+      {
+        "source": "raw-request-body",
+        "envname": "IPSEC_BODY_FILE"
+      }
+    ],
+    "pass-environment-to-command": [
+      {
+        "source": "header",
+        "name": "X-IPsec-Signature",
+        "envname": "IPSEC_SIGNATURE"
+      }
+    ],
+    "trigger-rule": {
+      "match": {
+        "type": "payload-hmac-sha256",
+        "secret": "REPLACE_WITH_THE_SAME_HIGH_ENTROPY_SECRET_AS_IPSEC_WEBHOOK_SECRET",
+        "parameter": {
+          "source": "header",
+          "name": "X-IPsec-Signature"
+        }
+      }
+    },
+    "trigger-rule-mismatch-http-response-code": 403
+  },
+  {
+    "id": "ipsec-export",
+    "execute-command": "C:\\Program Files\\IpsecManager\\.venv\\Scripts\\python.exe",
+    "command-working-directory": "C:\\Program Files\\IpsecManager",
+    "http-methods": [
+      "POST"
+    ],
+    "incoming-payload-content-type": "application/json",
+    "include-command-output-in-response": true,
+    "include-command-output-in-response-on-error": true,
+    "response-headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json; charset=utf-8"
+      }
+    ],
+    "pass-arguments-to-command": [
+      {
+        "source": "string",
+        "name": "-I"
+      },
+      {
+        "source": "string",
+        "name": "-m"
+      },
+      {
+        "source": "string",
+        "name": "ipsec_manager"
+      },
+      {
+        "source": "string",
+        "name": "--config"
+      },
+      {
+        "source": "string",
+        "name": "C:\\ProgramData\\IpsecManager\\config.json"
+      },
+      {
+        "source": "string",
+        "name": "webhook"
+      },
+      {
+        "source": "string",
+        "name": "--operation"
+      },
+      {
+        "source": "string",
+        "name": "export"
+      }
+    ],
+    "pass-file-to-command": [
+      {
+        "source": "raw-request-body",
+        "envname": "IPSEC_BODY_FILE"
+      }
+    ],
+    "pass-environment-to-command": [
+      {
+        "source": "header",
+        "name": "X-IPsec-Signature",
+        "envname": "IPSEC_SIGNATURE"
+      }
+    ],
+    "trigger-rule": {
+      "match": {
+        "type": "payload-hmac-sha256",
+        "secret": "REPLACE_WITH_THE_SAME_HIGH_ENTROPY_SECRET_AS_IPSEC_WEBHOOK_SECRET",
+        "parameter": {
+          "source": "header",
+          "name": "X-IPsec-Signature"
+        }
+      }
+    },
+    "trigger-rule-mismatch-http-response-code": 403
+  },
+  {
+    "id": "ipsec-check",
+    "execute-command": "C:\\Program Files\\IpsecManager\\.venv\\Scripts\\python.exe",
+    "command-working-directory": "C:\\Program Files\\IpsecManager",
+    "http-methods": [
+      "POST"
+    ],
+    "incoming-payload-content-type": "application/json",
+    "include-command-output-in-response": true,
+    "include-command-output-in-response-on-error": true,
+    "response-headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json; charset=utf-8"
+      }
+    ],
+    "pass-arguments-to-command": [
+      {
+        "source": "string",
+        "name": "-I"
+      },
+      {
+        "source": "string",
+        "name": "-m"
+      },
+      {
+        "source": "string",
+        "name": "ipsec_manager"
+      },
+      {
+        "source": "string",
+        "name": "--config"
+      },
+      {
+        "source": "string",
+        "name": "C:\\ProgramData\\IpsecManager\\config.json"
+      },
+      {
+        "source": "string",
+        "name": "webhook"
+      },
+      {
+        "source": "string",
+        "name": "--operation"
+      },
+      {
+        "source": "string",
+        "name": "check"
+      }
+    ],
+    "pass-file-to-command": [
+      {
+        "source": "raw-request-body",
+        "envname": "IPSEC_BODY_FILE"
+      }
+    ],
+    "pass-environment-to-command": [
+      {
+        "source": "header",
+        "name": "X-IPsec-Signature",
+        "envname": "IPSEC_SIGNATURE"
+      }
+    ],
+    "trigger-rule": {
+      "match": {
+        "type": "payload-hmac-sha256",
+        "secret": "REPLACE_WITH_THE_SAME_HIGH_ENTROPY_SECRET_AS_IPSEC_WEBHOOK_SECRET",
+        "parameter": {
+          "source": "header",
+          "name": "X-IPsec-Signature"
+        }
+      }
+    },
+    "trigger-rule-mismatch-http-response-code": 403
+  },
+  {
+    "id": "ipsec-add",
+    "execute-command": "C:\\Program Files\\IpsecManager\\.venv\\Scripts\\python.exe",
+    "command-working-directory": "C:\\Program Files\\IpsecManager",
+    "http-methods": [
+      "POST"
+    ],
+    "incoming-payload-content-type": "application/json",
+    "include-command-output-in-response": true,
+    "include-command-output-in-response-on-error": true,
+    "response-headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json; charset=utf-8"
+      }
+    ],
+    "pass-arguments-to-command": [
+      {
+        "source": "string",
+        "name": "-I"
+      },
+      {
+        "source": "string",
+        "name": "-m"
+      },
+      {
+        "source": "string",
+        "name": "ipsec_manager"
+      },
+      {
+        "source": "string",
+        "name": "--config"
+      },
+      {
+        "source": "string",
+        "name": "C:\\ProgramData\\IpsecManager\\config.json"
+      },
+      {
+        "source": "string",
+        "name": "webhook"
+      },
+      {
+        "source": "string",
+        "name": "--operation"
+      },
+      {
+        "source": "string",
+        "name": "add"
+      }
+    ],
+    "pass-file-to-command": [
+      {
+        "source": "raw-request-body",
+        "envname": "IPSEC_BODY_FILE"
+      }
+    ],
+    "pass-environment-to-command": [
+      {
+        "source": "header",
+        "name": "X-IPsec-Signature",
+        "envname": "IPSEC_SIGNATURE"
+      }
+    ],
+    "trigger-rule": {
+      "match": {
+        "type": "payload-hmac-sha256",
+        "secret": "REPLACE_WITH_THE_SAME_HIGH_ENTROPY_SECRET_AS_IPSEC_WEBHOOK_SECRET",
+        "parameter": {
+          "source": "header",
+          "name": "X-IPsec-Signature"
+        }
+      }
+    },
+    "trigger-rule-mismatch-http-response-code": 403
+  },
+  {
+    "id": "ipsec-delete",
+    "execute-command": "C:\\Program Files\\IpsecManager\\.venv\\Scripts\\python.exe",
+    "command-working-directory": "C:\\Program Files\\IpsecManager",
+    "http-methods": [
+      "POST"
+    ],
+    "incoming-payload-content-type": "application/json",
+    "include-command-output-in-response": true,
+    "include-command-output-in-response-on-error": true,
+    "response-headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json; charset=utf-8"
+      }
+    ],
+    "pass-arguments-to-command": [
+      {
+        "source": "string",
+        "name": "-I"
+      },
+      {
+        "source": "string",
+        "name": "-m"
+      },
+      {
+        "source": "string",
+        "name": "ipsec_manager"
+      },
+      {
+        "source": "string",
+        "name": "--config"
+      },
+      {
+        "source": "string",
+        "name": "C:\\ProgramData\\IpsecManager\\config.json"
+      },
+      {
+        "source": "string",
+        "name": "webhook"
+      },
+      {
+        "source": "string",
+        "name": "--operation"
+      },
+      {
+        "source": "string",
+        "name": "delete"
+      }
+    ],
+    "pass-file-to-command": [
+      {
+        "source": "raw-request-body",
+        "envname": "IPSEC_BODY_FILE"
+      }
+    ],
+    "pass-environment-to-command": [
+      {
+        "source": "header",
+        "name": "X-IPsec-Signature",
+        "envname": "IPSEC_SIGNATURE"
+      }
+    ],
+    "trigger-rule": {
+      "match": {
+        "type": "payload-hmac-sha256",
+        "secret": "REPLACE_WITH_THE_SAME_HIGH_ENTROPY_SECRET_AS_IPSEC_WEBHOOK_SECRET",
+        "parameter": {
+          "source": "header",
+          "name": "X-IPsec-Signature"
+        }
+      }
+    },
+    "trigger-rule-mismatch-http-response-code": 403
+  }
+]
