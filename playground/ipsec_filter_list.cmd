@@ -1,2 +1,1 @@
-netsh ipsec static
- show filterlist all level=verbose format=list resolvedns=no wide=yes | uv run parser.py
+netsh ipsec static show filterlist all level=verbose format=list resolvedns=no wide=yes | uv run parser.py
